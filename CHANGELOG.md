@@ -36,3 +36,8 @@ All notable changes to this project will be documented in this file.
 
 - bugfix
 - README.md error fixed
+
+## 0.0.0.9 (ceemonkey patch)
+
+- fixed bad paths in scripts
+- changed repository from nextthing.co to jfpossibilities.com
