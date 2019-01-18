@@ -28,7 +28,7 @@ Just run
 
     sudo apt update && sudo apt install git
 
-    git clone https://github.com/AllGray/PocketDesk.git
+    git clone https://github.com/ceemonkey/PocketDesk.git
 
     sudo ./PocketDesk/PocketDESK.sh
 
