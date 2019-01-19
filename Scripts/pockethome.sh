@@ -6,7 +6,7 @@
 # Install dependencies
 sudo apt update
 sudo apt upgrade -y
-sudo apt install git build-essential libasound2-dev libx11-dev libxrandr-dev libxcursor-dev libxft-dev libxinerama-dev libnm-glib-dev network-manager-dev libi2c-dev libssl-dev libnm-gtk-dev
+sudo apt install -y build-essential libasound2-dev libx11-dev libxrandr-dev libxcursor-dev libxft-dev libxinerama-dev libnm-glib-dev network-manager-dev libi2c-dev libssl-dev libnm-gtk-dev
 
 # Use git to retrieve & install PocketHome
 git clone --recursive https://github.com/o-marshmallow/PocketCHIP-pocket-home/
