@@ -16,10 +16,6 @@ dbg = function (msg)
     end
 end
 
-dbgclient = function (event_name, c)
-    dbg(event_name.." "..tostring(c.pid).." "..tostring(c.window).." "..(c.clas$
-end
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -155,8 +151,8 @@ root.buttons(awful.util.table.join(
 local globalkeys = awful.util.table.join(
     awful.key({ }                  , "XF86PowerOff", focus_home_screen),
     awful.key({ modkey,           }, "Tab", focus_next_client),
-    awful.key({ "Control",        }, "Tab", focus_next_client),
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn("dm$
+    awful.key({ "Control",        }, "Tab", focus_next_client)--,
+    --awful.key({ modkey,           }, "Return", function () awful.util.spawn("dm$
 )
 
 local clientkeys = awful.util.table.join(
@@ -179,7 +175,8 @@ local clientbuttons = awful.util.table.join(
     -- left click and mode allows you to move windows
     awful.button({ modkey }, 1, awful.mouse.client.move),
     -- right click when holding mod
-    awful.button({ "Control" }, 1, function (c) awful.util.spawn("xdotool click$
+    awful.button({ "Control" }, 1, function (c) awful.util.spawn("xdotool click --clearmodifiers 3") end)
+)
 
 -- Set global keys
 root.keys(globalkeys)
@@ -222,10 +219,10 @@ client.add_signal("manage", function (c, startup)
 
     if not startup then
       -- Put windows in a smart way, only if they does not set an initial posit$
-      if not c.size_hints.user_position and not c.size_hints.program_position t$
-          awful.placement.no_overlap(c)
-          awful.placement.no_offscreen(c)
-      end
+      --if not c.size_hints.user_position and not c.size_hints.program_position t$
+      --    awful.placement.no_overlap(c)
+      --    awful.placement.no_offscreen(c)
+      --end
     end
 end)
 
@@ -251,7 +248,7 @@ hide_mouse_cursor()
 awful.util.spawn_with_shell("/usr/sbin/pocketchip-load")
 
 -- launch onboarding
-awful.util.spawn_with_shell("onboard $HOME/.config/onboard /usr/share/pocketchi$
+-- awful.util.spawn_with_shell("onboard $HOME/.config/onboard /usr/share/pocketchi$
 
 -- launch home screen
 launch_home_screen()
